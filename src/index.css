@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Custom Utilities */
+@layer utilities {
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-400 via-secondary-400 to-accent-400 bg-clip-text text-transparent;
+  }
+  
+  .noisy {
+    @apply relative;
+  }
+  
+  .noisy::before {
+    content: '';
+    @apply absolute inset-0 bg-noise pointer-events-none;
+  }
+  
+  .glass {
+    @apply backdrop-blur-xl bg-black/30 border border-white/10;
+  }
+  
+  .nav {
+    @apply fixed top-0 left-0 right-0 z-50 px-6 py-4 transition-all duration-1000;
+  }
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-primary text-white bg-black overflow-x-hidden;
+  line-height: 1.6;
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-black;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary-500;
+}
+
+/* Text selection */
+::selection {
+  @apply bg-primary-500/30 text-white;
+}
+
+/* Focus styles */
+*:focus {
+  @apply outline-none ring-2 ring-primary-500/50 ring-offset-2 ring-offset-black;
+}
+
+/* Custom animations */
+.char {
+  display: inline-block;
+}
+
+.line {
+  overflow: hidden;
+}
