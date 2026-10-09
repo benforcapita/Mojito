@@ -23,3 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+# Generated verification artifacts
+playwright-report/
+test-results/
+*.tsbuildinfo
